@@ -32,6 +32,11 @@
         var norm = false;
         var a = new Audio("./sfx/bomb.wav");
         function reverse() {
+            if (!norm) {
+                var r = "#" + ((1 << 24) + (Math.random() * 255 << 16) + (Math.random() * 255 << 8) + Math.random() * 255).toString(16).slice(1);
+                console.log(r.substring(0,7));
+                document.getElementById("b").style.color = r.substring(0,7);
+            }
             if (bg && !norm) {
                 document.body.style.backgroundImage = "url('assets/gamingrev.gif')";
             }
