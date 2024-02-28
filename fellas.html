@@ -13,8 +13,6 @@
 
         body::before {
             content: "";
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
             z-index: -1;
             position: fixed;
             top: 0;
@@ -31,12 +29,19 @@
     </style>
     <script>
         var bg = true;
+        var norm = false;
         function reverse() {
-            if (bg) {
+            if (bg && !norm) {
                 document.body.style.backgroundImage = "url('assets/gamingrev.gif')";
             }
             else {
-                document.body.style.backgroundImage = "url('assets/gaming.gif')";
+                if (Math.random() > .95) {
+                    document.body.style.backgroundImage = "url('assets/normal.png')";
+                    norm = true;
+                }
+                else if (!norm) {
+                    document.body.style.backgroundImage = "url('assets/gaming.gif')";
+                }
             }
             bg = !bg;
         }
