@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparc Laboratories Homepage</title>
+    <style>
+        body {
+            position: relative;
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            background-image: url(./assets/creucat-creudance.gif);
+            background-repeat: repeat;
+            background-size: 10% auto;
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3; /* Opacity set to 30% */
+        }
+    </style>
 </head>
 <body>
     <h1>Sparc Laboratories Homepage</h1>
@@ -18,10 +39,10 @@
     <button onclick="playAudio()" type="button">FREE DUBSTEP BUTTON</button>
     <br/>
     <button onclick = "window.location.href='https://sparclab.work/fellas'">any gamers?</button>
-    <br>
-    <button onclick = "freeMoney()">Free Money</button>
+    <br/>
     <img style="padding-top: 50px; height: 30vh" src="/assets/IMG_2102.jpg">
-
+    <br/>
+    <button onclick = "freeMoney()">Free Money</button>
     <script>
         function playAudio() {
             const audioElements = document.getElementsByTagName("audio");
