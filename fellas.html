@@ -30,14 +30,22 @@
     <script>
         var bg = true;
         var norm = false;
+        var a = new Audio("./sfx/bomb.wav");
         function reverse() {
             if (bg && !norm) {
                 document.body.style.backgroundImage = "url('assets/gamingrev.gif')";
             }
             else {
-                if (Math.random() > .95) {
+                var r = Math.random()
+                if (r > .99) {
+                    document.body.style.backgroundImage = "url('assets/gun.png')";
+                    a.play();
+                }
+                else if (r > .95) {
                     document.body.style.backgroundImage = "url('assets/normal.png')";
                     norm = true;
+                    document.getElementById("b").innerHTML = "OH FUCK OH GOD";
+                    document.getElementById("b").style.color = "chartreuse";
                 }
                 else if (!norm) {
                     document.body.style.backgroundImage = "url('assets/gaming.gif')";
@@ -63,6 +71,6 @@
     that means...
     <br/>
     <audio src="/music/fellas.mp3" autoplay></audio>
-    <button onclick="reverse()">It's Gaming Time</button>
+    <button onclick="reverse()" id="b">It's Gaming Time</button>
 </body>
 </html>
