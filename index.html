@@ -19,6 +19,7 @@
     <br/>
     <button onclick = "window.location.href='https://sparclab.work/fellas'">any gamers?</button>
     <br>
+    <button onclick = "freeMoney()">Free Money</button>
     <img style="padding-top: 50px; height: 30vh" src="/assets/IMG_2102.jpg">
 
     <script>
@@ -44,6 +45,16 @@
             snd.play()
         }
         setInterval(bruh, 10000)
+
+        function freeMoney(){
+            const audioElements = document.getElementsByTagName("audio");
+            for (let i = 0; i < audioElements.length; i++) {
+                console.log("pausing")
+                audioElements[i].pause();
+            }
+            const audio = new Audio("./music/look.wav");
+            audio.play();
+        }
     </script>
     <p>Welcome to Sparc Lab a room where Computer Science Students come hangout</p>
     <a href="http://tinyurl.com/2xxyvbe8">Sparc wishlist</a>
