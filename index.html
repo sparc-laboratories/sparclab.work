@@ -7,6 +7,44 @@
 </head>
 <body>
     <h1>Sparc Laboratories Homepage</h1>
+    <p>Hello Sparc!</p>
+    <a href="https://www.amazon.com/United-Nuclear-Thermite-high-Yield-Ounces/dp/B08WNNX9KC/">Sparc wishlist</a>
+    <p>Enable audio and reload for some nice ambiance!</p>
+    <p>WHATEVER YOU DO, DO NOT ADD /SCARY AT THE END OF THIS LINK!! THIS IS YOUR LAST WARNING!!!</p>
+    <p>ALWAYS ADD /GOOFY TO THE URL!!!! VERY COOL :D</p>
+    <audio src="/music/important.mp3" autoplay>
+        <p>womp womp.</p>
+    </audio>
+    <button onclick="playAudio()" type="button">FREE DUBSTEP BUTTON</button>
+    <br/>
+    <button onclick = "window.location.href='https://sparclab.work/fellas'">any gamers?</button>
+    <br>
+    <img style="padding-top: 50px; height: 30vh" src="/assets/IMG_2102.jpg">
+
+    <script>
+        function playAudio() {
+            const audioElements = document.getElementsByTagName("audio");
+            for (let i = 0; i < audioElements.length; i++) {
+                console.log("pausing")
+                audioElements[i].pause();
+            }
+            const audio = new Audio("/music/Vastive - Legend Subsidia.mp3");
+            audio.play();
+        }
+        var snds = ["./sfx/bababooey-soundfx.wav",
+                    "./sfx/Fire_In_The_Hole.wav",
+                    "./sfx/lego-yoda-death-sound-effect.wav",
+                    "./sfx/ohshit.wav",
+                    "./sfx/spongebob-fail.wav",
+                    "./sfx/vine-boom.wav",
+                    "./sfx/hallelujah.mp3"]
+        function bruh() {
+            var rand = Math.floor(Math.random() * 6)
+            var snd = new Audio(snds[rand])
+            snd.play()
+        }
+        setInterval(bruh, 10000)
+    </script>
     <p>Welcome to Sparc Lab a room where Computer Science Students come hangout</p>
     <a href="http://tinyurl.com/2xxyvbe8">Sparc wishlist</a>
 </body>
