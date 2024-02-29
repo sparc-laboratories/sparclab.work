@@ -4,8 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>orca.fish</title>
-
+  </head>
   <body style="background-image: url(/assets/IMG_1804.JPG); background-repeat: repeat; background-size: 30%">
-    
+    <script>
+      var a1 = new Audio("music/orca/bigbart.wav");
+      var a2 = new Audio("music/orca/bigbart2.wav");
+      a1.play()
+      a1.onended = function() {
+        a2.play()
+      }
+      a2.onended = function() {
+        a1.play()
+      }
+    </script>
   </body>
 </html>
