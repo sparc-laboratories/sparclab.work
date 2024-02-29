@@ -22,10 +22,17 @@
             width: 100%;
             height: auto;
         }
+        .hank {
+            float: left;
+            width: 100px;
+            height: 100px;
+            padding-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <script>
+        var win = false;
         var victory = new Audio("./sfx/valve/victoryff.swf.mp3");
         var fail = new Audio("./sfx/valve/wah-wah-sound-effect.mp3");
         var konami = ["Up","Up","Down","Down","Left","Right","Left","Right","B","A"];
@@ -33,20 +40,26 @@
         var song2 = new Audio("./music/valve/GabeN song.mp3");
         var song3 = new Audio("./music/valve/Carol Of The Sales.mp3");
         var you = [];
+        var times = 0;
         function k(input) {
             you.push(input)
             if (you.length >= konami.length) {
                 if (you.join() == konami.join()) {
+                    win = true;
                     victory.play();
+                    document.getElementById("hank").src="/assets/valve/yay.png";
                 }
                 else {
                     fail.play();
                 }
-                you = [];
+                reset();
             }
         }
         function reset() {
             you = [];
+            if (!win) {
+                document.getElementById("AAAA").innerHTML += "<img class='aaaa' src='/assets/valve/AAAA.png' /><br/>";
+            }
         }
         song1.play();
         song1.onended = function() {
@@ -55,10 +68,20 @@
         song2.onended = function() {
             song3.play();
         }
+        song3.onended = function() {
+            if (win) {
+                window.location.href="https://sparclab.work/orca";
+            }
+            else {
+                window.location.href="https://sparclab.work/scary";
+            }
+        }
     </script>
     I dropped my NES controller bruh.
-    <img class="cow" src="/assets/valve/cow.png" />
+    <img class="cow" src="/assets/valve/cow.png" onclick/>
+    <div id="AAAA" style="text-align: left;"></div>
     <div class="nes">
+        <img class="hank" id="hank" src="/assets/valve/bruh.jpg" />
         <br/>
         <button style="background-color: black; color: white" onclick="k('Left')"> ↑ </button>
         <br/>
