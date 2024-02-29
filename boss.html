@@ -70,14 +70,14 @@
 
             if (felkHealth <= 0) {
                 document.getElementById("damageinfo").innerText = ("You won! The Felk has been defeated!");
-                const audio1 = new Audio("/sfx/Earthbound - You Win!.mp3");
-                const audio2 = new Audio("/sfx/crowd_small_chil_ec049202_9klCwI6.mp3");
+                const audio1 = new Audio("/sfx/boss/Earthbound - You Win!.mp3");
+                const audio2 = new Audio("/sfx/boss/crowd_small_chil_ec049202_9klCwI6.mp3");
                 audio1.play();
                 audio2.play();
             } else if (youHealth <= 0) {
                 document.getElementById("damageinfo").innerText = ("You lost! The Felk has defeated you!");
-                const audio1 = new Audio("/sfx/drake-embarrassing_Ts9wkE9.mp3");
-                const audio2 = new Audio("/sfx/a-bad-dream-earthbound.mp3");
+                const audio1 = new Audio("/sfx/boss/drake-embarrassing_Ts9wkE9.mp3");
+                const audio2 = new Audio("/sfx/boss/a-bad-dream-earthbound.mp3");
                 audio1.play();
                 audio2.play();
             }
@@ -88,10 +88,10 @@
             youLost = Math.round(Math.random() * (50 - 5) + 5);
 
             if (felkLost > 50) {
-                const audio1 = new Audio("/sfx/smaaaash.mp3");
+                const audio1 = new Audio("/sfx/boss/smaaaash.mp3");
                 audio1.play();
             } else {
-                const audio1 = new Audio("/sfx/enemyhit_IE5cOg0.mp3");
+                const audio1 = new Audio("/sfx/boss/enemyhit_IE5cOg0.mp3");
                 audio1.play();
             }
 
