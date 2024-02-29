@@ -13,7 +13,7 @@
 
         body::before {
             content: "";
-            background-image: url(./assets/creucat-creudance.gif);
+            background-image: url(./assets/home/creucat-creudance.gif);
             background-repeat: repeat;
             background-size: 10% auto;
             z-index: -1;
@@ -32,45 +32,68 @@
     <h1>Sparc Laboratories Homepage</h1>
     <p>Hello Sparc!</p>
     <a href="https://www.amazon.com/United-Nuclear-Thermite-high-Yield-Ounces/dp/B08WNNX9KC/">Sparc wishlist</a>
+    <br/>
+    <a href="/boss.html">ARE YOU UP FOR A BATTLE?!!?!?!?!?!?!</a>
     <p>Enable audio and reload for some nice ambiance!</p>
     <p>WHATEVER YOU DO, DO NOT ADD /SCARY AT THE END OF THIS LINK!! THIS IS YOUR LAST WARNING!!!</p>
     <p>ALWAYS ADD /GOOFY TO THE URL!!!! VERY COOL :D</p>
-    <audio src="/music/important.mp3" autoplay>
+    <audio src="/music/home/important.mp3" autoplay>
         <p>womp womp.</p>
     </audio>
     <button onclick="playAudio()" type="button">FREE DUBSTEP BUTTON</button>
     <br/>
     <button onclick = "window.location.href='https://sparclab.work/fellas'">any gamers?</button>
     <br/>
-    <img style="padding-top: 50px; height: 30vh" src="/assets/IMG_2102.jpg">
+    <img style="padding-top: 50px; height: 30vh" src="/assets/home/IMG_2102.jpg">
     <br/>
     <button onclick = "freeMoney()">Free Money</button>
+    <p>Welcome to Sparc Lab a room where Computer Science Students come hangout and do projects, school work and wii sports!</p>
+    <!-- THIS MUST BE ON THE BOTTOM OR ELSE YOU WILL DIE. -->
+    <p id="nightmare"></p>
     <script>
+        let nightmareText = "NIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\nNIGHTMARE\n";
+        document.getElementById("nightmare").innerText = nightmareText;
+
+        window.addEventListener("scroll", function() {
+            nightmareText += "NIGHTMARE\n";
+            document.getElementById("nightmare").innerText = nightmareText;
+        });
+
         function playAudio() {
             const audioElements = document.getElementsByTagName("audio");
             for (let i = 0; i < audioElements.length; i++) {
                 console.log("pausing")
                 audioElements[i].pause();
             }
-            const audio = new Audio("/music/Vastive - Legend Subsidia.mp3");
+            const audio = new Audio("/music/home/Vastive - Legend Subsidia.mp3");
             audio.play();
         }
         //p
-        var snds = ["./sfx/bryan_cranston_falling_over.wav",
-                    "./sfx/bababooey-soundfx.wav",
-                    "./sfx/Fire_In_The_Hole.wav",
-                    "./sfx/lego-yoda-death-sound-effect.wav",
-                    "./sfx/ohshit.wav",
-                    "./sfx/spongebob-fail.wav",
-                    "./sfx/vine-boom.wav",
-                    "./sfx/hallelujah.mp3"
-                    ]
+        var snds = ["./sfx/home/bryan_cranston_falling_over.wav",
+                    "./sfx/home/taco-bell-bong-sfx.mp3",
+                    "./sfx/home/bababooey-soundfx.wav",
+                    "./sfx/home/Fire_In_The_Hole.wav",
+                    "./sfx/home/lego-yoda-death-sound-effect.wav",
+                    "./sfx/home/ohshit.wav",
+                    "./sfx/home/spongebob-fail.wav",
+                    "./sfx/home/vine-boom.wav",
+                    "./sfx/home/hallelujah.mp3",
+                    "./sfx/home/discord-notification.mp3",
+                    "./sfx/home/yippee-tbh.mp3",
+                    "./sfx/home/bonk_BEtiM8g.mp3",
+                    "./sfx/home/minecraft-drinking-sound-effect.mp3",
+                    "./sfx/home/nioce.mp3",
+                    "./sfx/home/steam-screenshot-capture-sound-hurts-my-ears.mp3",
+                    "./sfx/home/spongebob-boowomp.mp3",
+                    "./sfx/home/lego-breaking.mp3",
+                    "./sfx/home/metal-pipe-clang.mp3",
+                ]
         function bruh() {
-            var rand = Math.floor(Math.random() * 8)
+            var rand = Math.floor(Math.random() * snds.length) // BLAIR WHY DID YOU NOT USE LENGTH!!!!!!!!!!!!!!!!!
             var snd = new Audio(snds[rand])
             snd.play()
         }
-        setInterval(bruh, 10000)
+        setInterval(bruh, 5000)
 
         function freeMoney(){
             const audioElements = document.getElementsByTagName("audio");
@@ -78,10 +101,9 @@
                 console.log("pausing")
                 audioElements[i].pause();
             }
-            const audio = new Audio("./music/look.wav");
+            const audio = new Audio("./sfx/home/look.wav");
             audio.play();
         }
     </script>
-    <p>Welcome to Sparc Lab a room where Computer Science Students come hangout and do projects, school work and wii sports!</p>
 </body>
 </html>

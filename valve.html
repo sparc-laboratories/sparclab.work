@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valve</title>
+    <style>
+        body {
+            background-image: url(/assets/valve/2fort.jpg);
+            background-size: auto;
+            text-align: center;
+            cursor: url(/assets/valve/cursor.png), auto;
+        }
+        button {
+            cursor: url(/assets/valve/cursor.png), auto;
+        }
+        .nes {
+            background-color: dimgray;
+            width: fit-content;
+        }
+        .cow {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var victory = new Audio("./sfx/valve/victoryff.swf.mp3");
+        var fail = new Audio("./sfx/valve/wah-wah-sound-effect.mp3");
+        var konami = ["Up","Up","Down","Down","Left","Right","Left","Right","B","A"];
+        var song1 = new Audio("./music/valve/newell.mp3")
+        var song2 = new Audio("./music/valve/GabeN song.mp3");
+        var song3 = new Audio("./music/valve/Carol Of The Sales.mp3");
+        var you = [];
+        function k(input) {
+            you.push(input)
+            if (you.length >= konami.length) {
+                if (you.join() == konami.join()) {
+                    victory.play();
+                }
+                else {
+                    fail.play();
+                }
+                you = [];
+            }
+        }
+        function reset() {
+            you = [];
+        }
+        song1.play();
+        song1.onended = function() {
+            song2.play();
+        }
+        song2.onended = function() {
+            song3.play();
+        }
+    </script>
+    I dropped my NES controller bruh.
+    <img class="cow" src="/assets/valve/cow.png" />
+    <div class="nes">
+        <br/>
+        <button style="background-color: black; color: white" onclick="k('Left')"> ↑ </button>
+        <br/>
+        <button style="background-color: black; color: white" onclick="k('Down')"> ← </button>
+        <button style="background-color: black; color: white" onclick="reset()">&nbsp;&nbsp;&nbsp;</button>
+        <button style="background-color: black; color: white" onclick="k('Up')"> → </button>
+        <br/>
+        <button style="background-color: black; color: white" onclick="k('Right')"> ↓ </button>
+        <br/>
+        <br/>
+        <button style="background-color: red;" onclick="k('A')">&nbsp;&nbsp;&nbsp;</button>
+        <br/>
+        <button style="background-color: red;" onclick="k('B')">&nbsp;&nbsp;&nbsp;</button>
+        <br/>
+        <br/>
+    </div>
+</body>
+</html>
