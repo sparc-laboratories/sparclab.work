@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparc Laboratories Homepage</title>
+    <style>
+        body {
+            position: relative;
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            background-image: url(https://static.tumblr.com/67ea004b811e56c02f00341eba9f0fad/zvrjats/IdCns2qbo/tumblr_static_tumblr_static_2h8k2xyts4o488w8wo0kg8o4g_focused_v3.gif);
+            background-repeat: repeat;
+            background-size: 30% auto;
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8; /* Opacity set to 30% */
+        }
+
+        h1, h2, h3 {
+            color: white;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>BOSS BATTLE: THE FELK</h1>
+    <h2 id="hpfelk" style="color: red;"></h2>
+    <img id="felk" src="./assets/FELK.png" width="500vh" height="500vh"></img>
+    <h2 id="hpyou" style="color: green;"></h2>
+    <h3 id="damageinfo" style="color: blue;"></h3>
+
+    <h3 class="button" >CHOOSE AN ATTACK</h3>
+    <button class="button" onclick="dealDamage(1, 15)" type="button">TACKLE</button>
+    <button class="button" onclick="dealDamage(10, 20)" type="button">BODY SLAM</button>
+    <button class="button" onclick="dealDamage(30, 70)" type="button">TYPESCRIPT RAY</button>
+
+    <audio src="/music/ee_erSong.wav" autoplay />
+
+    <script>
+        let felkHealth = 250;
+        let youHealth = 250;
+
+        document.getElementById("hpfelk").innerText = `THE FELK HEALTH: ${felkHealth} / 250`;
+        document.getElementById("hpyou").innerText = `YOUR HEALTH: ${youHealth} / 250`;
+
+        function checkWinner() {
+            if (felkHealth > 0 && youHealth > 0) return;
+
+            const audioElements = document.getElementsByTagName("audio");
+            for (let i = 0; i < audioElements.length; i++) {
+                audioElements[i].pause();
+            }
+
+            document.getElementById("hpfelk").style.display = "none";
+            document.getElementById("hpyou").style.display = "none";
+            document.getElementById("felk").style.display = "none";
+
+            for (let button of document.getElementsByClassName("button")) {
+                button.style.display = "none";
+            }
+
+            if (felkHealth <= 0) {
+                document.getElementById("damageinfo").innerText = ("You won! The Felk has been defeated!");
+                const audio1 = new Audio("/sfx/Earthbound - You Win!.mp3");
+                const audio2 = new Audio("/sfx/crowd_small_chil_ec049202_9klCwI6.mp3");
+                audio1.play();
+                audio2.play();
+            } else if (youHealth <= 0) {
+                document.getElementById("damageinfo").innerText = ("You lost! The Felk has defeated you!");
+                const audio1 = new Audio("/sfx/drake-embarrassing_Ts9wkE9.mp3");
+                const audio2 = new Audio("/sfx/a-bad-dream-earthbound.mp3");
+                audio1.play();
+                audio2.play();
+            }
+        }
+
+        function dealDamage(min, max) {
+            felkLost = Math.round(Math.random() * (max - min) + min);
+            youLost = Math.round(Math.random() * (50 - 5) + 5);
+
+            if (felkLost > 50) {
+                const audio1 = new Audio("/sfx/smaaaash.mp3");
+                audio1.play();
+            } else {
+                const audio1 = new Audio("/sfx/enemyhit_IE5cOg0.mp3");
+                audio1.play();
+            }
+
+            felkHealth -= felkLost;
+            youHealth -= youLost;
+
+            document.getElementById("hpfelk").innerText = `THE FELK HEALTH: ${felkHealth} / 250`;
+            document.getElementById("hpyou").innerText = `YOUR HEALTH: ${youHealth} / 250`;
+            document.getElementById("damageinfo").innerText = `You lost ${youLost} health and dealt ${felkLost} damage to the Felk!`;
+
+            checkWinner();
+        }
+    </script>
+</body>
+</html>

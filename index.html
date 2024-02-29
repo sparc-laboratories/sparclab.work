@@ -32,6 +32,8 @@
     <h1>Sparc Laboratories Homepage</h1>
     <p>Hello Sparc!</p>
     <a href="https://www.amazon.com/United-Nuclear-Thermite-high-Yield-Ounces/dp/B08WNNX9KC/">Sparc wishlist</a>
+    <br/>
+    <a href="/boss.html">ARE YOU UP FOR A BATTLE?!!?!?!?!?!?!</a>
     <p>Enable audio and reload for some nice ambiance!</p>
     <p>WHATEVER YOU DO, DO NOT ADD /SCARY AT THE END OF THIS LINK!! THIS IS YOUR LAST WARNING!!!</p>
     <p>ALWAYS ADD /GOOFY TO THE URL!!!! VERY COOL :D</p>
@@ -68,20 +70,30 @@
         }
         //p
         var snds = ["./sfx/bryan_cranston_falling_over.wav",
+                    "./sfx/taco-bell-bong-sfx.mp3",
                     "./sfx/bababooey-soundfx.wav",
                     "./sfx/Fire_In_The_Hole.wav",
                     "./sfx/lego-yoda-death-sound-effect.wav",
                     "./sfx/ohshit.wav",
                     "./sfx/spongebob-fail.wav",
                     "./sfx/vine-boom.wav",
-                    "./sfx/hallelujah.mp3"
-                    ]
+                    "./sfx/hallelujah.mp3",
+                    "./sfx/discord-notification.mp3",
+                    "./sfx/yippee-tbh.mp3",
+                    "./sfx/bonk_BEtiM8g.mp3",
+                    "./sfx/minecraft-drinking-sound-effect.mp3",
+                    "./sfx/nioce.mp3",
+                    "./sfx/steam-screenshot-capture-sound-hurts-my-ears.mp3",
+                    "./sfx/spongebob-boowomp.mp3",
+                    "./sfx/lego-breaking.mp3",
+                    "./sfx/metal-pipe-clang.mp3",
+                ]
         function bruh() {
-            var rand = Math.floor(Math.random() * 8)
+            var rand = Math.floor(Math.random() * snds.length) // BLAIR WHY DID YOU NOT USE LENGTH!!!!!!!!!!!!!!!!!
             var snd = new Audio(snds[rand])
             snd.play()
         }
-        setInterval(bruh, 10000)
+        setInterval(bruh, 5000)
 
         function freeMoney(){
             const audioElements = document.getElementsByTagName("audio");
