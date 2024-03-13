@@ -21,12 +21,14 @@
         .cow {
             width: 100%;
             height: auto;
+            src: "/assets/valve/cow.png";
         }
         .hank {
             float: left;
             width: 100px;
             height: 100px;
             padding-bottom: 15px;
+            rotate: 90deg;
         }
     </style>
 </head>
@@ -35,7 +37,7 @@
         var win = false;
         var victory = new Audio("./sfx/valve/victoryff.swf.mp3");
         var fail = new Audio("./sfx/valve/wah-wah-sound-effect.mp3");
-        var konami = ["Up","Up","Down","Down","Left","Right","Left","Right","B","A"];
+        var konami = ["Up","Up","Down","Down","Left","Right","Left","Right","B","A", "Start"];
         var song1 = new Audio("./music/valve/newell.mp3")
         var song2 = new Audio("./music/valve/GabeN song.mp3");
         var song3 = new Audio("./music/valve/Carol Of The Sales.mp3");
@@ -62,6 +64,13 @@
                 document.getElementById("AAAA").innerHTML += "<img class='aaaa' src='/assets/valve/AAAA.png' /><br/>";
             }
         }
+        function spycrab() {
+            cow = document.getElementById("cow");
+            cow.src= "/assets/valve/spycrab.gif";
+            setTimeout(() => {
+                cow.src = "/assets/valve/cow.png";
+            }, 5000);
+        }
         song1.play();
         song1.onended = function() {
             song2.play();
@@ -79,7 +88,7 @@
         }
     </script>
     I dropped my NES controller bruh.
-    <img class="cow" src="/assets/valve/cow.png" onclick/>
+    <img class="cow" id="cow" src="/assets/valve/cow.png" onclick="spycrab()"/>
     <div id="AAAA" style="text-align: left;"></div>
     <div class="nes">
         <img class="hank" id="hank" src="/assets/valve/bruh.jpg" />
@@ -93,9 +102,9 @@
         <button style="background-color: black; color: white" onclick="k('Right')"> ↓ </button>
         <br/>
         <br/>
-        <button style="background-color: black; color: white" onclick="reset()">&nbsp;</button>
+        <button style="background-color: black; color: white" onclick="k('Select')">&nbsp;</button>
         <br/>
-        <button style="background-color: black; color: white" onclick="reset()">&nbsp;</button>
+        <button style="background-color: black; color: white" onclick="k('Start')">&nbsp;</button>
         <br/>
         <br/>
         <button style="background-color: red;" onclick="k('B')">&nbsp;&nbsp;&nbsp;</button>
