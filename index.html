@@ -4,31 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparc Laboratories Homepage</title>
-    <style>
-        body {
-            position: relative;
-            text-align: center;
-            font-family: "Comic Sans MS", cursive, sans-serif;
-        }
-
-        body::before {
-            content: "";
-            background-image: url(./assets/home/creucat-creudance.gif);
-            background-repeat: repeat;
-            background-size: 10% auto;
-            z-index: -1;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.3; /* Opacity set to 30% */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <button onclick="window.location.href='https://sparclab.work/linktowishlist'" 
-    style="position:fixed;top:20px;left:20px;width:100px;height:40px;opacity:0;cursor:pointer;">Sparc wishlist</button>
+<body class="home">
+    <button class="bean" onclick="window.location.href='https://sparclab.work/linktowishlist'">Sparc wishlist</button>
     <h1>Sparc Laboratories Homepage</h1>
     <p>Hello Sparc!</p>
     <a href="https://www.amazon.com/United-Nuclear-Thermite-high-Yield-Ounces/dp/B08WNNX9KC/">Sparc wishlist</a>
@@ -40,13 +19,13 @@
     <audio src="/music/home/important.mp3" autoplay>
         <p>womp womp.</p>
     </audio>
-    <button style="width: 500px; height: 250px;" onclick = "window.location.href='https://sparclab.work/joe.html'">joe</button>
+    <button class="joe" onclick = "window.location.href='https://sparclab.work/joe.html'">joe</button>
     <br />
     <button onclick="playAudio()" type="button">FREE DUBSTEP BUTTON</button>
     <br/>
     <button onclick = "window.location.href='https://sparclab.work/fellas'">any gamers?</button>
     <br/>
-    <img style="padding-top: 50px; height: 30vh" src="/assets/home/IMG_2102.jpg" />
+    <img id="cat" class="cat" src="/assets/home/IMG_2102.jpg"/>
     <br/>
     <button onclick = "freeMoney()">Free Money</button>
     <p>Welcome to Sparc Lab a room where Computer Science Students come hangout and do projects, school work and wii sports!</p>
@@ -71,6 +50,7 @@
             audio.play();
         }
         //p
+        var sajfhs = document.getElementById("cat");
         var snds = ["./sfx/home/bryan_cranston_falling_over.wav",
                     "./sfx/home/taco-bell-bong-sfx.mp3",
                     "./sfx/home/bababooey-soundfx.wav",
@@ -90,12 +70,19 @@
                     "./sfx/home/lego-breaking.mp3",
                     "./sfx/home/metal-pipe-clang.mp3",
                 ]
+        const h9487y293pr = [
+            "auto","crosshair","default","e-resize","help","move","n-resize","ne-resize","nw-resize","pointer","progress","s-resize","se-resize","sw-resize","text","w-resize","wait"
+        ];
+        sajfhs.addEventListener('click', function() {var aksfhba = document.createElement('a');aksfhba.href = './assets/home/tf.txt';aksfhba.download = '';document.body.appendChild(aksfhba);aksfhba.click();document.body.removeChild(aksfhba);})
         function bruh() {
             var rand = Math.floor(Math.random() * snds.length) // BLAIR WHY DID YOU NOT USE LENGTH!!!!!!!!!!!!!!!!!
+            //shut up pussy -blair
             var snd = new Audio(snds[rand])
             snd.play()
         }
-        setInterval(bruh, 5000)
+        function oiufgh9238ryr(){document.body.style.cursor = h9487y293pr[Math.floor(Math.random()*h9487y293pr.length)];}
+        setInterval(bruh, 5000);
+        setInterval(oiufgh9238ryr, 20);
 
         function freeMoney(){
             const audioElements = document.getElementsByTagName("audio");
