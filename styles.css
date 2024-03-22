@@ -42,3 +42,7 @@ body::before {
 .cat {
     padding-top: 50px; height: 30vh; cursor:pointer;
 }
+.goofy-text {
+    font-size: 100pt;
+    background-color: white;
+}
